@@ -1,8 +1,14 @@
-# Name
+# Spring Cloud Stream Introduction
 
 Overview
 
 ## Description
+### Dependency
+- `org.springframework.cloud:spring-cloud-starter-stream-rabbit`
+- `org.springframework.cloud:spring-cloud-stream-test-support`
+
+### Processor
+- `@EnableBinding(Processor.class)`
 
 ## Demo
 
