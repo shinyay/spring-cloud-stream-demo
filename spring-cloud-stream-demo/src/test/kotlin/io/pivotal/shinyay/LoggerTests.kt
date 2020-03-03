@@ -16,7 +16,7 @@ class LoggerTests(private val pipe: Processor, private val messageCollector: Mes
     fun whenSendMessage_thenResponseShouldUpdateText() {
         pipe.input()
                 .send(
-                        MessageBuilder.withPayload(LogMessage("This my message")).build()
+                        MessageBuilder.withPayload(LogMessage("Hello!")).build()
                 )
         val payload = messageCollector.forChannel(pipe.output())
                 .poll()
