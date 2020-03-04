@@ -8,8 +8,10 @@ import org.junit.jupiter.api.Test
 import org.springframework.cloud.stream.messaging.Processor
 import org.springframework.cloud.stream.test.binder.MessageCollector
 import org.springframework.messaging.support.MessageBuilder
+import org.springframework.test.context.ContextConfiguration
 
 @Tag("LoggerTest")
+@ContextConfiguration(classes = [SpringCloudStreamDemoApplication::class])
 class LoggerTests(private val pipe: Processor, private val messageCollector: MessageCollector) {
 
     @Test
