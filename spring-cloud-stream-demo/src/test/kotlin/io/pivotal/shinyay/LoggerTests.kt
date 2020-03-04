@@ -5,13 +5,18 @@ import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Tag
 import org.junit.jupiter.api.Test
+import org.junit.jupiter.api.extension.ExtendWith
 import org.springframework.cloud.stream.messaging.Processor
 import org.springframework.cloud.stream.test.binder.MessageCollector
 import org.springframework.messaging.support.MessageBuilder
+import org.springframework.test.annotation.DirtiesContext
 import org.springframework.test.context.ContextConfiguration
+import org.springframework.test.context.junit.jupiter.SpringExtension
 
 @Tag("LoggerTest")
+@ExtendWith(SpringExtension::class)
 @ContextConfiguration(classes = [SpringCloudStreamDemoApplication::class])
+@DirtiesContext
 class LoggerTests(private val pipe: Processor, private val messageCollector: MessageCollector) {
 
     @Test
